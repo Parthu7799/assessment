@@ -12,7 +12,7 @@ const PieQ = ({ correct, wrong }) => {
 
   return (
     <PieChart width={400} height={400}>
-       
+         
       <Pie
         data={data}
         cx={200}
@@ -25,9 +25,11 @@ const PieQ = ({ correct, wrong }) => {
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
+        
       </Pie>
+      
       <Tooltip />
-      <Legend layout="horizontal" align="center" verticalAlign="top" />
+      <Legend layout="horizontal" align="bottom" verticalAlign="bottom" />
     </PieChart>
   );
 };

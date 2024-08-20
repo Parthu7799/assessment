@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+     
     box-sizing: border-box;
+    
      
     
 }
@@ -13,12 +14,10 @@
     grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
     gap: 10px; /* Add space between items */
     background-color: lightblue; /* Temporary background for visibility */
-    padding: 20px;
     border-radius: 8px;
-    margin-right: 200px;
-    width: 200px;
-    height: 400px;
-     
+    margin-right: 100px;
+    width: 250px; /* Fixed width */
+    height: 400px; /* Fixed height */
 }
 
 .question-number {
@@ -31,6 +30,7 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     cursor: pointer;
+    margin: 10px;
 }
 .question-number:hover{
     background-color: rgb(56, 183, 225);

@@ -14,19 +14,15 @@ body {
   display: flex;
   flex-direction: row; /* Arrange children side by side */
   align-items: flex-start;
-  
-    /* Set a max width for better appearance */
 }
- 
-
 
 .assessment-container {
-  width: 75%; /* Adjust width as needed */
+  width: 900px; /* Fixed width */
+  height: 500px; /* Fixed height */
   background-color: white;
   border-radius: 8px;
   padding: 40px;
   box-sizing: border-box;
-  max-height: 80vh; /* Prevent overflow */
   overflow-y: auto; /* Scroll if content overflows */
 }
 
@@ -46,6 +42,7 @@ h2 {
   font-size: 20px;
   font-weight: 500;
   margin: 0;
+  margin-bottom: 20px;
 }
 
 ul {
