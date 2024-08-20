@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { resultInitalState } from "../constants.json";
-import quizData from '../constants.json';
 import "./Assessment.css";
 import Question from "./Question";
 import MainResult from "./MainResult";
@@ -9,11 +7,15 @@ const Assessment = ({ questions }) => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [answerInd, setAnswerInd] = useState(null);
     const [answer, setAnswer] = useState(null);
-    const [result, setResult] = useState(resultInitalState);
+    const [result, setResult] = useState({
+        score: 0,
+        correctAnswers: 0,
+        wrongAnswers: 0
+    });
     const [showResult, setShowResult] = useState(false);
 
-    const { question, choices, correctAnswer } = questions[currentQuestion];
-    
+    const { question, options, correctAnswer } = questions[currentQuestion];
+
     const onAnswerClick = (answer, index) => {
         setAnswerInd(index);
         setAnswer(answer === correctAnswer);
@@ -58,7 +60,7 @@ const Assessment = ({ questions }) => {
         <div className="container">
             <div>
                 <Question
-                    questions={quizData.jsQuizz.questions}
+                    questions={questions}
                     onQuestionNumberClick={onQuestionNumberClick}
                 />
             </div>
@@ -68,7 +70,7 @@ const Assessment = ({ questions }) => {
                 <span className="total-question">/{questions.length}</span>
                 <h2>{question}</h2>
                 <ul>
-                    {choices.map((answer, index) => (
+                    {options.map((answer, index) => (
                         <li
                             key={answer}
                             onClick={() => onAnswerClick(answer, index)}
